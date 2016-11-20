@@ -6,7 +6,10 @@ def main():
 
     mousex = 0 # used to store x coordinate of mouse event
     mousey = 0 # used to store y coordinate of mouse event
-    firstclick=0
+    MouseButton=0
+    down=1
+    up=2
+    clickstate=None
     pygame.button_down = False
     pygame.display.set_caption('Life Game')
 
@@ -31,28 +34,36 @@ def main():
                 mousex, mousey = event.pos
             if event.type == MOUSEBUTTONDOWN:
                 mousex, mousey = event.pos
-                pygame.button_down = True
-                firstclick=1
+                MouseButton=down
             if event.type == MOUSEBUTTONUP: 
                 mousex, mousey = event.pos 
-                pygame.button_down = False
                 BUTTON_CLICK=True
-                firstclick=2
+                MouseButton=up
                 
                 ####mouseClicked = True
         
         boxx, boxy = getBoxAtPixel(mousex, mousey)
         buttonNum=getButtonAtPixel(mousex, mousey)
-        if boxx != None and boxy != None and pygame.button_down == True:
-            if mainBoard[boxx][boxy]==DIE:
-                 mainBoard[boxx][boxy] = LIVE
-        elif boxx != None and boxy != None and BUTTON_CLICK==True:
-            if mainBoard[boxx][boxy]==LIVE:
-                 mainBoard[boxx][boxy] = DIE
-                 drawHighlightBox(boxx, boxy)
-        elif boxx != None and boxy != None: 
-             drawHighlightBox(boxx, boxy)
-                # set the box as "revealed"
+        if MouseButton==down:
+            if boxx != None and boxy !=None and clickstate==None:
+                if mainBoard[boxx][boxy]==DIE:
+                    clickstate=DIE
+                    mainBoard[boxx][boxy] = LIVE
+                elif mainBoard[boxx][boxy]==LIVE:
+                    clickstate=LIVE  
+                    mainBoard[boxx][boxy] = DIE 
+            elif boxx != None and boxy !=None and clickstate==DIE:
+                if mainBoard[boxx][boxy]==DIE:
+                    mainBoard[boxx][boxy] = LIVE
+            elif boxx != None and boxy !=None and clickstate==LIVE:
+                if mainBoard[boxx][boxy]==LIVE:
+                    mainBoard[boxx][boxy] = DIE
+        if MouseButton==up:
+            clickstate=None
+        if boxx != None and boxy != None: 
+            drawHighlightBox(boxx, boxy)
+        #print MouseButton,clickstate
+        
         if buttonNum!=None and BUTTON_CLICK==True:            
             #mainBoard=getNextBoard()
             if buttonNum==1:
