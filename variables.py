@@ -1,13 +1,13 @@
-FPS = 100 # frames per second, the general speed of the program
+FPS = 10000 # frames per second, the general speed of the program
 WINDOWWIDTH = 640 # size of window's width in pixels
 WINDOWHEIGHT = 480 # size of windows' height in pixels
 TrueWINDOWHEIGHT=540
 REVEALSPEED = 8 # speed boxes' sliding reveals and covers
-BOXSIZE = 10 # size of box height & width in pixels
-GAPSIZE = 3 # size of gap between boxes in pixels
-BOARDWIDTH = 40 # number of columns of icons
-BOARDHEIGHT = 30 # number of rows of icons
-BUTTONCOUNT = 2
+BOXSIZE = 5 # size of box height & width in pixels
+GAPSIZE = 2 # size of gap between boxes in pixels
+BOARDWIDTH = 80 # number of columns of icons
+BOARDHEIGHT = 50 # number of rows of icons
+BUTTONCOUNT = 3
 BUTTONGAP=20
 BUTTONWIDTH=62
 BUTTONHEIGHT=31
@@ -24,6 +24,7 @@ LIVE=1
 CIRCLE= 'circle'
 RECT= 'rect'
 
+Button_Auto="  run  "
 
 #            R    G    B
 GRAY     = (100, 100, 100)
@@ -40,5 +41,6 @@ BLACK    = (  0,   0,   0)
 
 BGCOLOR = NAVYBLUE
 LIGHTBGCOLOR = GRAY
-BOXCOLOR = WHITE
+BOXCOLOR = BLACK
 HIGHLIGHTCOLOR = BLUE
+BUTTONCOLOR = WHITE
