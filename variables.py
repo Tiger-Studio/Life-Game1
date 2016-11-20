@@ -7,7 +7,11 @@ BOXSIZE = 5 # size of box height & width in pixels
 GAPSIZE = 2 # size of gap between boxes in pixels
 BOARDWIDTH = 80 # number of columns of icons
 BOARDHEIGHT = 50 # number of rows of icons
-BUTTONCOUNT = 3
+BUTTONCOUNT = 4
+NextButton=0
+ResetButton=1
+RunButton=2
+HelpButton=3
 BUTTONGAP=20
 BUTTONWIDTH=62
 BUTTONHEIGHT=31
@@ -24,7 +28,10 @@ LIVE=1
 CIRCLE= 'circle'
 RECT= 'rect'
 
-Button_Auto="  run  "
+Button_Reset=" reset "
+Button_Next="  next "
+Button_Run="  run  "
+Button_Help="  help "
 
 #            R    G    B
 GRAY     = (100, 100, 100)
