@@ -66,19 +66,24 @@ def main():
         
         if buttonNum!=None and BUTTON_CLICK==True:            
             #mainBoard=getNextBoard()
-            if buttonNum==1:
+            if buttonNum==ResetButton:
                 mainBoard =getInitialBoard()
-            if buttonNum==0:
+            if buttonNum==NextButton:
                 mainBoard=getNext_generation(mainBoard)
-            if buttonNum==2:
-                global Button_Auto
+            if buttonNum==RunButton:
+                global Button_Run
                 if AutoButton==1:
                     AutoButton=2
-                    Button_Auto="  stop "
+                    Button_Run="  stop "
                 elif AutoButton==2:
                     AutoButton=1
-                    Button_Auto="  run  "
-                     
+                    Button_Run="  run  "
+             
+            if buttonNum==HelpButton:
+                #showinfo('No', 'Quit has been cancelled')
+                helpwindows()
+                
+                        
         if AutoButton==2:
             mainBoard=getNext_generation(mainBoard)
             pygame.time.wait(100)                 
