@@ -31,3 +31,8 @@ def drawBoard(board):
     for boxx in range(BOARDWIDTH):
         for boxy in range(BOARDHEIGHT):
             drawBox(board, boxx, boxy)
+                
+    for buttonNum in range(BUTTONCOUNT):
+        left,top=leftTopCoordsOfButton(buttonNum)
+        pygame.draw.rect(DISPLAYSURF, BOXCOLOR, (left, top, BUTTONWIDTH, BUTTONHEIGHT))
+        drawButton(buttonNum)
