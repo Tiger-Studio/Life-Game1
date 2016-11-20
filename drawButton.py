@@ -14,23 +14,30 @@ def getButtonAtPixel(x, y):
 
 def drawButton(buttonNum):
     left,top=leftTopCoordsOfButton(buttonNum)
-    if buttonNum==0:
+    if buttonNum==NextButton:
         basicFont = pygame.font.SysFont(None, 35)  
-        text = basicFont.render(" next  ", True, BLACK, GRAY) 
+        text = basicFont.render(Button_Next, True, BLACK, GRAY) 
         textRect = text.get_rect()     
         textRect.centerx = left+BUTTONWIDTH/2
         textRect.centery = top+BUTTONHEIGHT/2  
         DISPLAYSURF.blit(text, textRect)
-    if buttonNum==1:
+    if buttonNum==ResetButton:
         basicFont = pygame.font.SysFont(None, 35)  
-        text = basicFont.render(" reset ", True, BLACK, GRAY) 
+        text = basicFont.render(Button_Reset, True, BLACK, GRAY) 
         textRect = text.get_rect()     
         textRect.centerx = left+BUTTONWIDTH/2
         textRect.centery = top+BUTTONHEIGHT/2  
         DISPLAYSURF.blit(text, textRect) 
-    if buttonNum==2:
+    if buttonNum==RunButton:
         basicFont = pygame.font.SysFont(None, 35)  
-        text = basicFont.render(Button_Auto, True, BLACK, GRAY) 
+        text = basicFont.render(Button_Run, True, BLACK, GRAY) 
+        textRect = text.get_rect()     
+        textRect.centerx = left+BUTTONWIDTH/2
+        textRect.centery = top+BUTTONHEIGHT/2  
+        DISPLAYSURF.blit(text, textRect) 
+    if buttonNum==HelpButton:
+        basicFont = pygame.font.SysFont(None, 35)  
+        text = basicFont.render(Button_Help, True, BLACK, GRAY) 
         textRect = text.get_rect()     
         textRect.centerx = left+BUTTONWIDTH/2
         textRect.centery = top+BUTTONHEIGHT/2  
