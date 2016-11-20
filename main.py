@@ -10,6 +10,7 @@ def main():
     down=1
     up=2
     clickstate=None
+    AutoButton=1
     pygame.display.set_caption('Life Game')
 
     mainBoard = getInitialBoard()
@@ -69,9 +70,19 @@ def main():
                 mainBoard =getInitialBoard()
             if buttonNum==0:
                 mainBoard=getNext_generation(mainBoard)
-
+            if buttonNum==2:
+                global Button_Auto
+                if AutoButton==1:
+                    AutoButton=2
+                    Button_Auto="  stop "
+                elif AutoButton==2:
+                    AutoButton=1
+                    Button_Auto="  run  "
+                     
+        if AutoButton==2:
+            mainBoard=getNext_generation(mainBoard)
+            pygame.time.wait(100)                 
 
         # Redraw the screen and wait a clock tick.
         pygame.display.update()
         FPSCLOCK.tick(FPS)
-
