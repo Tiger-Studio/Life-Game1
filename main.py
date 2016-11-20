@@ -10,7 +10,6 @@ def main():
     down=1
     up=2
     clickstate=None
-    pygame.button_down = False
     pygame.display.set_caption('Life Game')
 
     mainBoard = getInitialBoard()
@@ -68,7 +67,11 @@ def main():
             #mainBoard=getNextBoard()
             if buttonNum==1:
                 mainBoard =getInitialBoard()
-                  ##### if firstSelection == None: # the current box was the first box clicked
+            if buttonNum==0:
+                mainBoard=getNext_generation(mainBoard)
 
+
+        # Redraw the screen and wait a clock tick.
         pygame.display.update()
         FPSCLOCK.tick(FPS)
+
