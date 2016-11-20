@@ -11,15 +11,19 @@ BUTTONCOUNT = 2
 BUTTONGAP=20
 BUTTONWIDTH=62
 BUTTONHEIGHT=31
-assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
+lifeMax=3
+lifeMin=3
+#assert (BOARDWIDTH * BOARDHEIGHT) % 2 == 0, 'Board needs to have an even number of boxes for pairs of matches.'
 XMARGIN = int((WINDOWWIDTH - (BOARDWIDTH * (BOXSIZE + GAPSIZE))) / 2)
 YMARGIN = int((WINDOWHEIGHT - (BOARDHEIGHT * (BOXSIZE + GAPSIZE))) / 2)
+
 
 DIE=0
 LIVE=1
 
 CIRCLE= 'circle'
 RECT= 'rect'
+
 
 #            R    G    B
 GRAY     = (100, 100, 100)
